@@ -9,7 +9,7 @@ The project shifts focus from a world of chaos to a healthy lifestyle inspired b
 
 
 
-Project comtributors:
-VASHU KAUSHIK (ideator)
-UTKARSH GAUR 
-SHUBHAM SHUKLA
+Project contributors:
+- VASHU KAUSHIK (ideator)
+- UTKARSH GAUR 
+- SHUBHAM SHUKLA
