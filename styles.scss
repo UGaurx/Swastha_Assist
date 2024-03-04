@@ -58,7 +58,7 @@ body {
     
         .content {
             max-width: 60%;
-            margin-left: 20px; /* Adjust the margin as needed */
+            margin-left: 5em; /* Adjust the margin as needed */
             display: flex;
             flex-direction: column;
             // align-items: center; /* Add this line */
@@ -94,11 +94,10 @@ body {
                     font-size: 2.5rem;
                     margin-top: 2.7em;
                     text-align: center;
-                    overflow-wrap: break-word;
-                    word-wrap: break-word;
-                    word-break: break-all;
+                    // overflow-wrap: break-word;
+                    // word-wrap: break-word;
+                    // word-break: break-all;
                 }
-
                 &:hover {
                     cursor:pointer;
                 }
