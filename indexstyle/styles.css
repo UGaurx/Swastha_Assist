@@ -55,6 +55,7 @@ body .header nav ul li a {
   margin-left: 5em; /* Adjust the margin as needed */
   display: flex;
   flex-direction: column;
+  align-items: center; /* Add this line */
 }
 .wrapper #hero .content h1 {
   font-size: 55px; /* Adjust the font size as needed */
@@ -73,15 +74,21 @@ body .header nav ul li a {
 .wrapper .module-wrapper a {
   text-decoration: none;
   margin: 1em 1em;
-  width: 40%;
-  height: 40vh;
+  width: 30%;
+  aspect-ratio: 1/1;
   background-color: rgb(154, 128, 229);
   border-radius: 3em;
+}
+.wrapper .module-wrapper a div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 .wrapper .module-wrapper a div h2 {
   color: white;
   font-size: 2.5rem;
-  margin-top: 2.7em;
   text-align: center;
 }
 .wrapper .module-wrapper a div:hover {
