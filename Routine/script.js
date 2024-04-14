@@ -1,45 +1,97 @@
-document.getElementById('analyze-btn').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  // Function to open time picker when clicking on "From" and "To" blocks
+  document.querySelectorAll('.time-input').forEach(input => {
+    input.addEventListener('click', function() {
+      closeTimePickers();
+      showTimePicker(this);
+    });
+  });
+
+  // Function to close all time pickers
+  function closeTimePickers() {
+    document.querySelectorAll('.time-picker').forEach(picker => {
+      picker.remove();
+    });
+  }
+
+  // Function to calculate time difference when "Analyze Routine" button is clicked
+  document.querySelector('.analyze-btn').addEventListener('click', function() {
     const rows = document.querySelectorAll('table tbody tr');
     
     rows.forEach(row => {
-      const fromInput = row.querySelector('input[name^="from"]');
-      const toInput = row.querySelector('input[name^="to"]');
-      const timeSpentCell = row.querySelector('td:nth-child(4)');
+      const fromInput = row.querySelector('.from');
+      const toInput = row.querySelector('.to');
+      const timeTakenCell = row.querySelector('.time-taken');
   
-      const fromTime = fromInput.value ? new Date(`1970-01-01T${fromInput.value}:00`) : null;
-      const toTime = toInput.value ? new Date(`1970-01-01T${toInput.value}:00`) : null;
+      const fromTime = parseTime(fromInput.value);
+      const toTime = parseTime(toInput.value);
   
-      const timeDiff = toTime - fromTime;
+      if (fromTime && toTime) {
+        const timeDiff = toTime - fromTime;
   
-      const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+        const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
   
-      const formattedTimeSpent = `${hours} hours ${minutes} minutes`;
+        const formattedTimeTaken = `${hours} hours ${minutes} minutes`;
   
-      timeSpentCell.textContent = formattedTimeSpent;
-    });
-  });
-  
-  document.getElementById('submit-btn').addEventListener('click', function() {
-    const printTable = document.createElement('table');
-    const originalRows = document.querySelectorAll('table tbody tr');
-    
-    originalRows.forEach(row => {
-      const printRow = printTable.insertRow();
-      
-      for (let i = 0; i < row.cells.length; i++) {
-        const printCell = printRow.insertCell(i);
-        const content = row.cells[i].querySelector('input') ? row.cells[i].querySelector('input').value : row.cells[i].textContent;
-        printCell.textContent = content;
+        timeTakenCell.textContent = formattedTimeTaken;
+      } else {
+        timeTakenCell.textContent = 'Invalid time';
       }
     });
-    
-    const printWindow = window.open('', '_blank');
-    printWindow.document.write('<html><head><title>Routine Table</title></head><body>');
-    printWindow.document.write('<h2>Routine Table</h2>');
-    printWindow.document.write(printTable.outerHTML);
-    printWindow.document.write('</body></html>');
-    printWindow.document.close();
-    printWindow.print();
   });
-  
+
+  // Function to parse time from input value
+  function parseTime(timeString) {
+    if (!timeString) return null;
+    
+    const [hours, minutes] = timeString.split(':').map(num => parseInt(num));
+    return new Date(1970, 0, 1, hours, minutes);
+  }
+
+  // Function to show time picker
+  function showTimePicker(input) {
+    const timePicker = document.createElement('div');
+    timePicker.classList.add('time-picker');
+    timePicker.innerHTML = `
+      <input type="time" class="time-select">
+      <button class="confirm-btn">OK</button>
+    `;
+    const confirmBtn = timePicker.querySelector('.confirm-btn');
+    const timeSelect = timePicker.querySelector('.time-select');
+    confirmBtn.addEventListener('click', function() {
+      input.value = timeSelect.value;
+      timePicker.remove();
+    });
+    input.parentNode.appendChild(timePicker);
+  }
+
+  // Function to print the table with CSS styles
+  document.querySelector('.submit-btn').addEventListener('click', function() {
+    const tableContent = document.querySelector('table').outerHTML;
+    const styleSheet = document.querySelector('link[href="style.css"]').outerHTML;
+    const printWindow = window.open('', '', 'width=800,height=600');
+
+    printWindow.document.write(`
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Printed Table</title>
+        ${styleSheet}
+        <script>
+          window.onload = function() {
+            window.print();
+          };
+        </script>
+      </head>
+      <body>
+        ${tableContent}
+      </body>
+      </html>
+    `);
+
+    printWindow.document.close();
+  });
+});
