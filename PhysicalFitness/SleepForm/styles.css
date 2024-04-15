@@ -14,11 +14,24 @@ nav {
   justify-content: space-between;
 }
 
+.logo {
+  position: absolute;
+  top: 5%;
+  left: 0px;
+  transform: translateY(-50%);
+}
+
+.logo img {
+  max-height: 100px;
+  max-width: 100%;
+}
+
 nav h1 {
   margin: 0;
   display: inline-block;
   vertical-align: middle;
   font-size: 38px;
+  margin-left: 90px;
 }
 
 nav ul {
