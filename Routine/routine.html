@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Routine</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routine Planner</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Routine Page</h1>
-    <p>Under Maintainance</p>
+  <header>
+    <h1>Routine Planner</h1>
+  </header>
+  <main>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Activity Blocks</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Time Taken</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wake Up</td>
+            <td><input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time"></td>
+            <td><input type="text" class="time-input to" id="to_wake_up" placeholder="Select Time"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Workout</td>
+            <td><input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time"></td>
+            <td><input type="text" class="time-input to" id="to_wake_up" placeholder="Select Time"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Breakfast</td>
+            <td><input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time"></td>
+            <td><input type="text" class="time-input to" id="to_wake_up" placeholder="Select Time"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Yoga & Meditation</td>
+            <td><input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time"></td>
+            <td><input type="text" class="time-input to" id="to_wake_up" placeholder="Select Time"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>School</td>
+            <td><input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time"></td>
+            <td><input type="text" class="time-input to" id="to_wake_up" placeholder="Select Time"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Lunch</td>
+            <td><input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time"></td>
+            <td><input type="text" class="time-input to" id="to_wake_up" placeholder="Select Time"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Self Study</td>
+            <td><input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time"></td>
+            <td><input type="text" class="time-input to" id="to_wake_up" placeholder="Select Time"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Relaxation</td>
+            <td><input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time"></td>
+            <td><input type="text" class="time-input to" id="to_wake_up" placeholder="Select Time"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Other Activities</td>
+            <td><input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time"></td>
+            <td><input type="text" class="time-input to" id="to_wake_up" placeholder="Select Time"></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="buttons">
+      <button class="analyze-btn">Analyze Routine</button>
+      <button class="submit-btn">Submit</button>
+    </div>
+    <!-- <div class="time-input-container">
+      <input type="text" class="time-input from" id="from_wake_up" placeholder="Select Time">
+    </div> -->
+    
+  </main>
+  <footer></footer>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+// Variables
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$background-color: #ecf0f1;
+$text-color: #34495e;
+$accent-color: #e74c3c;
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+header {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em 2em;
+    border: none;
+    border-radius: 4px;
+    
+    transition: background-color 0.3s ease;
+    
+    .analyze-btn,
+    .submit-btn {
+      width: 45%;
+      padding: 1em;
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    .analyze-btn {
+      background-color: $secondary-color;
+      color: #fff;
+    }
+    
+    .submit-btn {
+      background-color: $accent-color;
+      color: #fff;
+    }
+  
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+th, td {
+  padding: 1em;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: $primary-color;
+  color: #fff;
+  text-align: left;
+}
+
+// Custom styles for the time input
+.time-input {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-bottom-color 0.3s ease;
+
+  &:focus {
+    border-bottom-color: $secondary-color;
+  }
+
+  &::after {
+    content: "\25BA";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #999;
+    transition: color 0.3s ease;
+  }
+
+  &:hover::after {
+    color: #333;
+  }
+}
+
+// Custom styles for the time input container
+.time-input-container {
+  position: relative;
+  width: 120px; // Adjust width as needed
+
+  // Custom styles for the time input
+  .time-input {
+    width: 100%;
+    padding: 8px 30px 8px 10px; // Adjust padding as needed
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  // Custom styles for the time input icon
+  .time-input-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
