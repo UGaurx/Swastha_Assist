@@ -10,6 +10,6 @@ The project shifts focus from a world of chaos to a healthy lifestyle inspired b
 
 
 Project contributors:
-- UTKARSH GAUR (Team leader)
-- VASHU KAUSHIK (ideator)
+- UTKARSH GAUR 
+- VASHU KAUSHIK
 - SHUBHAM SHUKLA
