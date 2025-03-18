@@ -1,4 +1,8 @@
-body, h1, h2, p, ul {
+body,
+h1,
+h2,
+p,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -15,9 +19,22 @@ body .header {
   display: flex;
   justify-content: space-between;
 }
+
+.logo {
+  position: absolute;
+  top: 0%;
+  left: 0px;
+}
+
+.logo img {
+  max-height: 84px;
+  max-width: 100%;
+}
+
 body .header h1 {
   top: 0;
   left: 0;
+  margin-left: 80px;
 }
 body .header nav {
   margin-top: 0.8em;
@@ -158,4 +175,4 @@ footer {
     padding: 8px 16px;
     font-size: 14px;
   }
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */

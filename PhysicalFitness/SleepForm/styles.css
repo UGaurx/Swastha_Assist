@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e6c1c1;
+}
+
+nav {
+  background-color: #33d36a;
+  color: #fff;
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  position: absolute;
+  top: 5%;
+  left: 0px;
+  transform: translateY(-50%);
+}
+
+.logo img {
+  max-height: 100px;
+  max-width: 100%;
+}
+
+nav h1 {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 38px;
+  margin-left: 90px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 50px;
+  background-color: #551a8b;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+  text-align: center;
+  font-size: 55px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.question {
+  font-size: 23px;
+  margin-bottom: 12px;
+  transition: transform 0.3s;
+}
+
+.question:hover {
+  transform: scale(1);
+  outline: 2px solid rgb(121, 13, 157);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+label {
+  color: #fff;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  transition: 0.2s;
+}
+
+.radio-button:hover {
+  cursor: pointer;
+}
+
+button[type="submit"],
+button[type="reset"] {
+  background-color: #d52f2f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 22px;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+  background-color: #b61919f7;
+}
+
+.button-group {
+  text-align: center;
+}
+
+#suggestions-container {
+  text-align: center;
+  font-size: 50px;
+}
+
+#suggestions-list {
+  list-style-type: none;
+  padding: 0;
+  font-size: 30px;
+}
+
+#suggestions-list li {
+  border-radius: 5px;
+  background-color: rgb(255, 92, 92);
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.2s;
+}
+
+#suggestions-list li:hover {
+  transform: scale(1.1);
+}
+
+#suggestions-list li:last-child {
+  margin-bottom: 10px;
+}

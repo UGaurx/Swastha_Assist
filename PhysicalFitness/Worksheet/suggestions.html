@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suggestions</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="logo01.jpeg" alt="Logo" />
+      </div>
+      <div>
+        <h1>Health Worksheet</h1>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="suggestions-container">
+      <h2><b>Our Advisory</b></h2>
+      <ul id="suggestions-list"></ul>
+    </div>
+
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const suggestionsText = urlParams.get("suggestions");
+
+      const suggestionsList = document.getElementById("suggestions-list");
+      const suggestions = suggestionsText.split("\n");
+      suggestions.forEach((suggestion) => {
+        const li = document.createElement("li");
+        li.textContent = suggestion;
+        suggestionsList.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
